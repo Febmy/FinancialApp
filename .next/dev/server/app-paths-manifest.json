@@ -1,0 +1,11 @@
+{
+  "/analytics/page": "app/analytics/page.js",
+  "/assets/page": "app/assets/page.js",
+  "/budgeting/page": "app/budgeting/page.js",
+  "/page": "app/page.js",
+  "/petty-cash/page": "app/petty-cash/page.js",
+  "/receivables/page": "app/receivables/page.js",
+  "/reports/page": "app/reports/page.js",
+  "/tax/page": "app/tax/page.js",
+  "/treasury/page": "app/treasury/page.js"
+}
