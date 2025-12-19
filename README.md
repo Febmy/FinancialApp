@@ -141,7 +141,7 @@ finance-app/
 
 ## Instalasi & Setup
 
-1. Clone repository atau download ZIP dari v0
+1. Clone repository 
 2. Install dependencies:
 ```bash
 npm install
@@ -181,13 +181,6 @@ npm run dev
 - Safari
 - Edge
 
-## Production Deployment
-
-Aplikasi ini siap untuk di-deploy ke Vercel dengan satu klik:
-
-1. Klik tombol "Publish" di v0
-2. Connect ke Vercel account
-3. Deploy otomatis dengan optimasi production
 
 ## License
 
@@ -199,4 +192,4 @@ Untuk bantuan dan support, hubungi tim finance atau IT support perusahaan.
 
 ---
 
-**Built with ❤️ using v0 by Vercel**
+****
