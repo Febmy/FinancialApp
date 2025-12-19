@@ -73,7 +73,7 @@ export function Sidebar() {
       >
         <div className="flex flex-col h-full">
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-balance">FinanceHub</h1>
+            <h1 className="text-2xl font-bold text-balance">FinanceAys</h1>
             <p className="text-sm text-[var(--color-muted-foreground)] mt-1">Management System</p>
           </div>
 

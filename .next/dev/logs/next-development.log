@@ -1,6 +1,45 @@
-[00:00:01.456] Server  LOG      ✓ Ready in 1022ms
-[00:00:06.397] Server  LOG      ○ Compiling / ...
-[00:00:07.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.970] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:07.970] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:07.970] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765898649604}
+[00:00:01.545] Server  LOG      ✓ Ready in 1071ms
+[00:00:06.513] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.845] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:06.845] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:06.845] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766149625931}
+[00:13:09.774] Server  LOG      ✓ Compiled in 64ms
+[00:13:46.227] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/transactions color: rgb(120, 120, 120) color: inherit {"dp":"/transactions","o":"http://localhost:3000/transactions","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766150445273}
+[00:16:28.768] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:16:28.768] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[03:56:20.894] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/reports color: rgb(120, 120, 120) color: inherit {"dp":"/reports","o":"http://localhost:3000/reports","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163799950}
+[03:56:21.736] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/transactions color: rgb(120, 120, 120) color: inherit {"dp":"/transactions","o":"http://localhost:3000/transactions","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163800791}
+[03:56:24.922] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/reports color: rgb(120, 120, 120) color: inherit {"dp":"/reports","o":"http://localhost:3000/reports","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163803991}
+[03:56:26.375] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/transactions color: rgb(120, 120, 120) color: inherit {"dp":"/transactions","o":"http://localhost:3000/transactions","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163805434}
+[03:57:39.452] Server  LOG      ✓ Compiled in 106ms
+[03:57:51.188] Server  LOG      ✓ Compiled in 94ms
+[03:57:52.901] Server  LOG      ✓ Compiled in 67ms
+[03:58:18.269] Server  LOG      ✓ Compiled in 66ms
+[03:58:47.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:58:47.342] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:58:47.342] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/transactions","route":"/transactions"}
+[03:58:47.342] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/transactions color: rgb(120, 120, 120) color: inherit {"dp":"/transactions","o":"http://localhost:3000/transactions","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163946433}
+[03:59:03.322] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[03:59:03.322] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[03:59:06.171] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/reports color: rgb(120, 120, 120) color: inherit {"dp":"/reports","o":"http://localhost:3000/reports","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766163965230}
+[03:59:21.087] Browser LOG     [v0] Exporting Daily Cash Position as pdf
+[03:59:28.625] Browser LOG     [v0] Exporting Daily Sales Report as pdf
+[03:59:38.166] Browser LOG     [v0] Exporting Bank Transaction Summary as pdf
+[03:59:50.637] Browser LOG     [v0] Exporting Weekly Cash Flow Forecast as pdf
+[04:00:04.629] Browser LOG     [v0] Exporting Balance Sheet as pdf
+[04:00:10.444] Browser LOG     [v0] Exporting Profit & Loss Statement as pdf
+[04:00:14.156] Browser LOG     [v0] Exporting Trend Analysis as pdf
+[04:00:22.149] Browser LOG     [v0] Exporting Daily Cash Position as excel
+[04:01:02.778] Browser LOG     [v0] Exporting Cash Flow as excel
+[04:01:05.968] Browser LOG     [v0] Exporting Cash Flow as csv
+[04:01:23.815] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766164102885}
+[04:18:35.165] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/treasury color: rgb(120, 120, 120) color: inherit {"dp":"/treasury","o":"http://localhost:3000/treasury","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165134254}
+[04:18:38.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/receivables color: rgb(120, 120, 120) color: inherit {"dp":"/receivables","o":"http://localhost:3000/receivables","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165137745}
+[04:18:40.703] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/payables color: rgb(120, 120, 120) color: inherit {"dp":"/payables","o":"http://localhost:3000/payables","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165139770}
+[04:18:43.209] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/assets color: rgb(120, 120, 120) color: inherit {"dp":"/assets","o":"http://localhost:3000/assets","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165142286}
+[04:18:45.082] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/tax color: rgb(120, 120, 120) color: inherit {"dp":"/tax","o":"http://localhost:3000/tax","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165144153}
+[04:18:46.470] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/budgeting color: rgb(120, 120, 120) color: inherit {"dp":"/budgeting","o":"http://localhost:3000/budgeting","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165145550}
+[04:18:48.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/petty-cash color: rgb(120, 120, 120) color: inherit {"dp":"/petty-cash","o":"http://localhost:3000/petty-cash","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165147219}
+[04:18:51.737] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[04:18:51.737] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[04:18:59.528] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/budgeting color: rgb(120, 120, 120) color: inherit {"dp":"/budgeting","o":"http://localhost:3000/budgeting","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766165158603}

@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Plus, Search, Filter, Download, Upload, ArrowUpCircle, ArrowDownCircle } from "lucide-react"
 import { getTransactions, addTransaction, type Transaction } from "@/lib/data-store"
+import { exportToCSV } from "@/lib/export-utils"
 
 export function TransactionsContent() {
   const [isAddOpen, setIsAddOpen] = useState(false)
@@ -39,6 +40,141 @@ export function TransactionsContent() {
     return matchesSearch && typeMatch
   })
 
+  const handleExport = () => {
+    const exportData = filteredTransactions.map((trx) => ({
+      ID: trx.id,
+      Tanggal: trx.date,
+      Tipe: trx.type === "income" ? "Cash In" : "Cash Out",
+      Kategori: trx.category,
+      Deskripsi: trx.description,
+      Akun: trx.account || "",
+      Jumlah: trx.amount,
+      Status: trx.status,
+      Referensi: trx.reference || "",
+    }))
+    exportToCSV(exportData, `transaksi_${new Date().toISOString().split("T")[0]}`)
+  }
+
+  // Helper function to parse CSV line with quoted values
+  const parseCSVLine = (line: string): string[] => {
+    const values: string[] = []
+    let current = ""
+    let inQuotes = false
+    
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i]
+      const nextChar = line[i + 1]
+      
+      if (char === '"') {
+        if (inQuotes && nextChar === '"') {
+          // Escaped quote
+          current += '"'
+          i++ // Skip next quote
+        } else {
+          // Toggle quote state
+          inQuotes = !inQuotes
+        }
+      } else if (char === "," && !inQuotes) {
+        // End of field
+        values.push(current.trim())
+        current = ""
+      } else {
+        current += char
+      }
+    }
+    
+    // Add last field
+    values.push(current.trim())
+    return values
+  }
+
+  const handleImport = () => {
+    const input = document.createElement("input")
+    input.type = "file"
+    input.accept = ".csv"
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (!file) return
+
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        try {
+          const text = event.target?.result as string
+          const lines = text.split("\n").filter((line) => line.trim())
+          if (lines.length < 2) {
+            alert("File CSV tidak valid atau kosong")
+            return
+          }
+
+          // Parse header
+          const headers = parseCSVLine(lines[0]).map((h) => h.replace(/^"|"$/g, "").trim())
+          
+          // Parse data rows
+          const importedTransactions: Omit<Transaction, "id">[] = []
+          let successCount = 0
+          let errorCount = 0
+          
+          for (let i = 1; i < lines.length; i++) {
+            try {
+              const values = parseCSVLine(lines[i]).map((v) => v.replace(/^"|"$/g, "").trim())
+              
+              if (values.length < headers.length) {
+                console.warn(`Skipping row ${i + 1}: insufficient columns`)
+                errorCount++
+                continue
+              }
+
+              const row: any = {}
+              headers.forEach((header, index) => {
+                row[header] = values[index] || ""
+              })
+
+              // Map CSV columns to Transaction fields
+              const type = row["Tipe"] === "Cash In" || row["Tipe"] === "income" ? "income" : "expense"
+              const amount = Number.parseFloat(String(row["Jumlah"] || "0").replace(/[^\d.-]/g, ""))
+              const status = (row["Status"] || "completed") as "completed" | "pending" | "cancelled"
+
+              if (!row["Tanggal"] || !row["Deskripsi"] || !amount || isNaN(amount)) {
+                console.warn(`Skipping row ${i + 1}: missing required fields`)
+                errorCount++
+                continue
+              }
+
+              importedTransactions.push({
+                date: row["Tanggal"],
+                description: row["Deskripsi"],
+                category: row["Kategori"] || "",
+                type: type as "income" | "expense",
+                amount: amount,
+                status: status,
+                account: row["Akun"] || "",
+                reference: row["Referensi"] || "",
+              })
+              successCount++
+            } catch (rowError) {
+              console.error(`Error parsing row ${i + 1}:`, rowError)
+              errorCount++
+            }
+          }
+
+          // Add transactions
+          importedTransactions.forEach((trx) => {
+            addTransaction(trx)
+          })
+
+          const message = `Berhasil mengimport ${successCount} transaksi${errorCount > 0 ? ` (${errorCount} baris gagal)` : ""}`
+          alert(message)
+          setTransactions(getTransactions())
+        } catch (error) {
+          console.error("Error importing CSV:", error)
+          alert("Error saat mengimport file CSV. Pastikan format file benar.")
+        }
+      }
+      reader.readAsText(file, "UTF-8")
+    }
+    input.click()
+  }
+
   return (
     <div className="p-6 space-y-6">
       {/* Header Section */}
@@ -66,11 +202,11 @@ export function TransactionsContent() {
             </DialogContent>
           </Dialog>
 
-          <Button variant="outline" className="gap-2 bg-transparent">
+          <Button variant="outline" className="gap-2 bg-transparent" onClick={handleImport}>
             <Upload className="h-4 w-4" />
             Import CSV
           </Button>
-          <Button variant="outline" className="gap-2 bg-transparent">
+          <Button variant="outline" className="gap-2 bg-transparent" onClick={handleExport}>
             <Download className="h-4 w-4" />
             Export
           </Button>
