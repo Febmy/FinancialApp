@@ -154,6 +154,52 @@ npm run dev
 
 4. Buka browser di `http://localhost:3000`
 
+## Deployment ke Netlify
+
+### Metode 1: Deploy melalui Netlify Dashboard (Recommended)
+
+1. **Login ke Netlify**: Buka [netlify.com](https://netlify.com) dan login dengan GitHub
+
+2. **Import Repository**:
+   - Klik "Add new site" → "Import an existing project"
+   - Pilih "GitHub" dan authorize Netlify
+   - Pilih repository `FinancialApp`
+   - Netlify akan otomatis mendeteksi konfigurasi dari `netlify.toml`
+
+3. **Konfigurasi Build** (sudah otomatis dari netlify.toml):
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+   - Netlify akan otomatis menggunakan plugin `@netlify/plugin-nextjs`
+
+4. **Deploy**: Klik "Deploy site" dan tunggu proses build selesai
+
+5. **Setelah Deploy**:
+   - Netlify akan memberikan URL seperti `https://your-app-name.netlify.app`
+   - Setiap push ke branch `main` akan otomatis trigger deployment baru
+
+### Metode 2: Deploy menggunakan Netlify CLI
+
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Login ke Netlify
+netlify login
+
+# Deploy
+netlify deploy
+
+# Untuk production deploy
+netlify deploy --prod
+```
+
+### Catatan Penting
+
+- Pastikan repository sudah di-push ke GitHub
+- Netlify akan otomatis install dependencies dan menjalankan build
+- Plugin `@netlify/plugin-nextjs` diperlukan untuk Next.js (akan diinstall otomatis)
+- Environment variables bisa di-set di Netlify Dashboard → Site settings → Environment variables
+
 ## Fitur Keamanan
 
 - Data encryption in transit & at rest (production ready)
